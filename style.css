@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #f4f9f9;
+  color: #333;
+}
+
+.page-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+header[role="banner"] {
+  background: linear-gradient(120deg, #76c7c0, #67a0aa);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  animation: fadeInDown 1s ease forwards;
+  opacity: 0;
+}
+
+header h1 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+header h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+#zen-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fadeInUp 1.2s ease forwards;
+  opacity: 0;
+}
+
+#zen-summary,
+#zen-preamble {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#zen-summary:hover,
+#zen-preamble:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#zen-supporting {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#zen-supporting > div {
+  background: white;
+  padding: 1.5rem;
+  border-left: 6px solid #67a0aa;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+.sidebar {
+  background: #eaf6f6;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+  animation: fadeInRight 1s ease forwards;
+  opacity: 0;
+}
+
+.sidebar .wrapper {
+  position: sticky;
+  top: 1rem;
+}
+
+.sidebar h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #2c6e7f;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #067b7b;
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+  transform: scale(1.05);
+  color: #034d4d;
+}
+
+#zen-summary {
+  border: 2px solid #ccc;
+  padding: 15px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+#zen-summary::before {
+  content: "";
+  display: block;
+  background-image: url("img/appelblauwzzegroen-natuur.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-bottom: none;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #d3f0ef;
+  border-radius: 8px;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+footer a {
+  color: #056666;
+  text-decoration: none;
+  padding: 0.2rem 0.5rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  background: #c1e7e6;
+  border-radius: 4px;
+  transform: scale(1.05);
+}
+
+.extra1,
+.extra2,
+.extra3,
+.extra4,
+.extra5,
+.extra6 {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .page-wrapper {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header h2 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar {
+    position: relative;
+    top: auto;
+    box-shadow: none;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Animatie keyframes */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
